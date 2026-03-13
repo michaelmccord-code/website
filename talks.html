@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dharma Talks — Sozan Michael McCord</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Sozan Michael McCord</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="talks.html" class="active">Talks</a></li>
+        <li><a href="teachings.html">Teachings</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay"></div>
+  <div class="mobile-panel">
+    <a href="about.html">About</a>
+    <a href="talks.html" class="active">Talks</a>
+    <a href="teachings.html">Teachings</a>
+    <a href="coaching.html">Coaching</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Dharma Talks</h1>
+    <p class="subtitle">Recorded teachings</p>
+  </header>
+
+  <!-- Talks -->
+  <section class="content-section sand">
+    <div class="content-wide">
+      <p class="reveal">Dharma talks are a central part of practice at San Francisco Zen Center. These recorded teachings explore themes of presence, service, and the intersection of ancient wisdom with contemporary life.</p>
+
+      <div class="filter-buttons reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="dharma-talk">Dharma Talks</button>
+        <button class="filter-btn" data-filter="lecture">Lectures</button>
+        <button class="filter-btn" data-filter="sesshin">Sesshin</button>
+      </div>
+
+      <div class="talks-list reveal">
+        <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="talk-item" data-category="dharma-talk">
+          <span class="talk-date">Oct 2024</span>
+          <span class="talk-title">Arriving in the Present</span>
+          <span class="talk-tag">Dharma Talk</span>
+        </a>
+        <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="talk-item" data-category="dharma-talk">
+          <span class="talk-date">Jul 2024</span>
+          <span class="talk-title">Leading with Not-Knowing</span>
+          <span class="talk-tag">Dharma Talk</span>
+        </a>
+        <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="talk-item" data-category="lecture">
+          <span class="talk-date">Apr 2024</span>
+          <span class="talk-title">The Genjo Koan in Everyday Life</span>
+          <span class="talk-tag">Lecture</span>
+        </a>
+        <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="talk-item" data-category="sesshin">
+          <span class="talk-date">Jan 2024</span>
+          <span class="talk-title">Winter Sesshin: Stillness and Renewal</span>
+          <span class="talk-tag">Sesshin</span>
+        </a>
+        <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="talk-item" data-category="dharma-talk">
+          <span class="talk-date">Sep 2023</span>
+          <span class="talk-title">Service as Practice</span>
+          <span class="talk-tag">Dharma Talk</span>
+        </a>
+        <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="talk-item" data-category="lecture">
+          <span class="talk-date">May 2023</span>
+          <span class="talk-title">The Tenzo's Instruction</span>
+          <span class="talk-tag">Lecture</span>
+        </a>
+        <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="talk-item" data-category="dharma-talk">
+          <span class="talk-date">Feb 2023</span>
+          <span class="talk-title">From Technology to Zafu</span>
+          <span class="talk-tag">Dharma Talk</span>
+        </a>
+        <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="talk-item" data-category="sesshin">
+          <span class="talk-date">Dec 2022</span>
+          <span class="talk-title">Rohatsu: Sitting Through the Night</span>
+          <span class="talk-tag">Sesshin</span>
+        </a>
+      </div>
+
+      <a href="https://www.sfzc.org/teachings/dharma-talks" target="_blank" class="browse-link reveal">Browse all talks at SFZC &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Sozan Michael McCord</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const hamburger = document.querySelector('.hamburger');
+    const mobilePanel = document.querySelector('.mobile-panel');
+    const mobileOverlay = document.querySelector('.mobile-overlay');
+
+    function toggleMobile() {
+      hamburger.classList.toggle('open');
+      mobilePanel.classList.toggle('open');
+      mobileOverlay.classList.toggle('open');
+    }
+
+    hamburger.addEventListener('click', toggleMobile);
+    mobileOverlay.addEventListener('click', toggleMobile);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const talkItems = document.querySelectorAll('.talk-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        talkItems.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

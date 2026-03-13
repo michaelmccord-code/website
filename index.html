@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sozan Michael McCord — Zen Priest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Sozan Michael McCord</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="talks.html">Talks</a></li>
+        <li><a href="teachings.html">Teachings</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Panel -->
+  <div class="mobile-overlay"></div>
+  <div class="mobile-panel">
+    <a href="about.html">About</a>
+    <a href="talks.html">Talks</a>
+    <a href="teachings.html">Teachings</a>
+    <a href="coaching.html">Coaching</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <svg class="enso" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 95 60 C 95 79.33 79.33 95 60 95 C 40.67 95 25 79.33 25 60 C 25 40.67 40.67 25 60 25 C 72 25 82.5 31 89 40"
+              fill="none" stroke="#2c2c2c" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <h1>Sozan Michael McCord</h1>
+      <p class="role">Zen Priest</p>
+      <p class="position"><span>President, San Francisco Zen Center</span></p>
+      <p class="verse">Sitting quietly, doing nothing, /<br>spring comes, and the grass /<br>grows by itself.</p>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Sozan Michael McCord</p>
+  </footer>
+
+  <script>
+    // Nav scroll shrink
+    window.addEventListener('scroll', () => {
+      document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile nav toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobilePanel = document.querySelector('.mobile-panel');
+    const mobileOverlay = document.querySelector('.mobile-overlay');
+
+    function toggleMobile() {
+      hamburger.classList.toggle('open');
+      mobilePanel.classList.toggle('open');
+      mobileOverlay.classList.toggle('open');
+    }
+
+    hamburger.addEventListener('click', toggleMobile);
+    mobileOverlay.addEventListener('click', toggleMobile);
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
