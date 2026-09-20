@@ -221,7 +221,7 @@ h1, h2, h3, h4 {
 /* ── Page Header ── */
 .page-header {
   text-align: center;
-  padding: 10rem 2rem 4rem;
+  padding: 10rem 2rem 2rem;
 }
 
 .page-header h1 {
@@ -371,7 +371,7 @@ h1, h2, h3, h4 {
 
 /* ── Content Sections ── */
 .content-section {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
 }
 
 .content-section.sand {
@@ -670,11 +670,11 @@ h1, h2, h3, h4 {
   }
 
   .page-header {
-    padding: 8rem 1.5rem 3rem;
+    padding: 8rem 1.5rem 1.5rem;
   }
 
   .content-section {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .talk-item {
