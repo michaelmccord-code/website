@@ -278,12 +278,10 @@ h1, h2, h3, h4 {
 }
 
 .hero-portrait {
-  width: 176px;
-  height: 176px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  object-fit: contain;
-  object-position: 75% center;
-  background: #ececec;
+  object-fit: cover;
   margin: 0 auto 2rem;
   opacity: 0;
   animation: portraitFadeIn 2s ease forwards;
