@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dharma Talks — Sozan Michael McCord</title>
+  <title>Talks & Teachings — Michael McCord</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -14,13 +14,11 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-name">Sozan Michael McCord</a>
+      <a href="index.html" class="nav-name">Michael McCord</a>
       <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
         <li><a href="talks.html" class="active">Talks</a></li>
-        <li><a href="teachings.html">Teachings</a></li>
         <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
       </ul>
       <button class="hamburger" aria-label="Menu">
         <span></span>
@@ -32,17 +30,15 @@
 
   <div class="mobile-overlay"></div>
   <div class="mobile-panel">
-    <a href="about.html">About</a>
     <a href="talks.html" class="active">Talks</a>
-    <a href="teachings.html">Teachings</a>
     <a href="coaching.html">Coaching</a>
-    <a href="contact.html">Contact</a>
+    <a href="podcast.html">Podcast</a>
   </div>
 
   <!-- Page Header -->
   <header class="page-header">
-    <h1>Dharma Talks</h1>
-    <p class="subtitle">Recorded teachings</p>
+    <h1>Talks &amp; Teachings</h1>
+    <p class="subtitle">Recorded dharma talks and lectures</p>
   </header>
 
   <!-- Talks -->
@@ -106,7 +102,12 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2026 Sozan Michael McCord</p>
+    <div class="footer-links">
+      <a href="talks.html">Talks</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="podcast.html">Podcast</a>
+    </div>
+    <p>&copy; 2026 Michael McCord</p>
   </footer>
 
   <script>
@@ -135,7 +136,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Filter logic
     const filterBtns = document.querySelectorAll('.filter-btn');
     const talkItems = document.querySelectorAll('.talk-item');
 
@@ -143,15 +143,9 @@
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         const filter = btn.dataset.filter;
-
         talkItems.forEach(item => {
-          if (filter === 'all' || item.dataset.category === filter) {
-            item.style.display = '';
-          } else {
-            item.style.display = 'none';
-          }
+          item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
         });
       });
     });

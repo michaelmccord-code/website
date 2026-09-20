@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sozan Michael McCord — Zen Priest</title>
+  <title>Michael McCord — Zen Priest · Coach · Podcast Host</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -14,13 +14,11 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-name">Sozan Michael McCord</a>
+      <a href="index.html" class="nav-name">Michael McCord</a>
       <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
         <li><a href="talks.html">Talks</a></li>
-        <li><a href="teachings.html">Teachings</a></li>
         <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
       </ul>
       <button class="hamburger" aria-label="Menu">
         <span></span>
@@ -30,14 +28,11 @@
     </div>
   </nav>
 
-  <!-- Mobile Panel -->
   <div class="mobile-overlay"></div>
   <div class="mobile-panel">
-    <a href="about.html">About</a>
     <a href="talks.html">Talks</a>
-    <a href="teachings.html">Teachings</a>
     <a href="coaching.html">Coaching</a>
-    <a href="contact.html">Contact</a>
+    <a href="podcast.html">Podcast</a>
   </div>
 
   <!-- Hero -->
@@ -48,11 +43,10 @@
         <path d="M 95 60 C 95 79.33 79.33 95 60 95 C 40.67 95 25 79.33 25 60 C 25 40.67 40.67 25 60 25 C 72 25 82.5 31 89 40"
               fill="none" stroke="#2c2c2c" stroke-width="3" stroke-linecap="round"/>
       </svg>
-      <img src="portrait.jpg" alt="Sozan Michael McCord" class="hero-portrait">
-      <h1>Sozan Michael McCord</h1>
-      <p class="role">Zen Priest</p>
-      <p class="position"><span>President, San Francisco Zen Center</span></p>
-      <p class="verse">Sitting quietly, doing nothing, /<br>spring comes, and the grass /<br>grows by itself.</p>
+      <img src="portrait.jpg" alt="Michael McCord" class="hero-portrait">
+      <h1>Michael McCord</h1>
+      <p class="role">Zen Priest · Executive Coach · Podcast Host</p>
+      <p class="tagline">Bridging the monastery and the modern work world</p>
     </div>
     <div class="scroll-hint">
       <span>Scroll</span>
@@ -60,18 +54,31 @@
     </div>
   </section>
 
+  <!-- About -->
+  <section class="content-section sand">
+    <div class="content-narrow reveal">
+      <h2 class="section-heading">Where I Come From</h2>
+      <p>I grew up in Oklahoma and Texas, went to a Christian college, and earned a degree in theology. I understand a lot of the folks in red states — their values, their concerns, what keeps them up at night. For the last twenty-five years, I've lived in Seattle and San Francisco, in communities on the left and far left. I've been a resident of San Francisco Zen Center since 2009 and was ordained as a Soto Zen priest in 2014.</p>
+      <p>What I've found is that most people want the same things: safety for their families, meaningful work, a sense of belonging, and the feeling that things can get better. We're motivated by remarkably similar things, even when our politics say otherwise.</p>
+      <p>That conviction shapes everything I do — whether I'm teaching at the Zen Center, coaching leaders through difficult transitions, or hosting conversations on my podcast about the topics that divide us. I believe the gap between red and blue America is narrower than it looks, and that understanding starts with listening.</p>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2026 Sozan Michael McCord</p>
+    <div class="footer-links">
+      <a href="talks.html">Talks</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="podcast.html">Podcast</a>
+    </div>
+    <p>&copy; 2026 Michael McCord</p>
   </footer>
 
   <script>
-    // Nav scroll shrink
     window.addEventListener('scroll', () => {
       document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Mobile nav toggle
     const hamburger = document.querySelector('.hamburger');
     const mobilePanel = document.querySelector('.mobile-panel');
     const mobileOverlay = document.querySelector('.mobile-overlay');
@@ -85,12 +92,9 @@
     hamburger.addEventListener('click', toggleMobile);
     mobileOverlay.addEventListener('click', toggleMobile);
 
-    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.15 });
 
