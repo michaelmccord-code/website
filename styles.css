@@ -282,8 +282,8 @@ h1, h2, h3, h4 {
   height: 176px;
   border-radius: 50%;
   object-fit: contain;
-  object-position: 65% center;
-  background: #d4d0cb;
+  object-position: 75% center;
+  background: #ececec;
   margin: 0 auto 2rem;
   opacity: 0;
   animation: portraitFadeIn 2s ease forwards;
