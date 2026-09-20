@@ -278,8 +278,8 @@ h1, h2, h3, h4 {
 }
 
 .hero-portrait {
-  width: 220px;
-  height: 220px;
+  width: 176px;
+  height: 176px;
   border-radius: 50%;
   object-fit: contain;
   background: var(--cloud);
